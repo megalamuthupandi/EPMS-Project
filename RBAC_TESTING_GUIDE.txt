@@ -1,0 +1,17 @@
+EPMS RBAC update
+
+1. Keep your existing local .env file. It is intentionally not included in this ZIP.
+2. Do not copy the .venv folder from this ZIP; it is intentionally excluded.
+3. Replace the matching files under your project with the files in this archive.
+4. Start the server:
+   py -m uvicorn app.main:app --reload
+5. Open /docs, Authorize with the ADMIN token, then test:
+   GET /api/v1/projects/ (PROJECT_VIEW)
+   POST /api/v1/projects/ (PROJECT_CREATE)
+   GET /api/v1/tasks/ (PROJECT_VIEW)
+6. To test denial, login as EMPLOYEE and try POST /api/v1/projects/; expected 403.
+
+Important:
+- This is a development implementation, not a production security audit.
+- The generic resource router still provides broad CRUD operations; its permission map is the first RBAC enforcement layer.
+- The task PATCH ownership check ensures EMPLOYEE can update only their own assigned task.
