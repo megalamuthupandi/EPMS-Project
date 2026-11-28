@@ -16,7 +16,7 @@ from app.routers.auth import get_current_user
 from app.core.security import decode_access_token
 
 router = APIRouter(prefix="/chat", tags=["Project Group Chat"])
-UPLOAD_DIR = Path("uploads/chat")
+UPLOAD_DIR = Path("/tmp/uploads/chat")
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 ALLOWED_EXT = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".pdf", ".doc", ".docx", ".xls", ".xlsx"}
 MAX_FILE_SIZE = 10 * 1024 * 1024
