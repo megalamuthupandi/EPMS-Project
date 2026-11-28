@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7ff"><title>EPMS · Enterprise Project Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="toast-region" class="toast-region" aria-live="polite"></div>
+  <main id="login-view" class="login-shell"><button id="login-theme-toggle" class="theme-toggle login-theme-toggle" title="Toggle theme">☾</button>
+    <section class="login-story">
+      <div class="brand"><span class="brand-mark">▰</span><span>EPMS</span><i></i><small>Enterprise Project Management System</small></div>
+      <div class="story-copy"><span class="eyebrow">ONE WORKSPACE. TOTAL CLARITY.</span><h1>Manage projects.<br>Align teams.<br><em>Deliver results.</em></h1><p>Plan, collaborate and deliver meaningful work with one connected project management workspace.</p></div>
+      <div class="story-visual"><div class="visual-orbit"></div><div class="mini-board"><div class="mini-top"><b>Project overview</b><span>•••</span></div><div class="mini-stats"><div><small>Overall progress</small><strong>75%</strong><div class="progress"><i style="width:75%"></i></div></div><div class="mini-ring">75%</div></div><div class="mini-bars"><i style="height:38%"></i><i style="height:60%"></i><i style="height:48%"></i><i style="height:82%"></i><i style="height:68%"></i><i style="height:100%"></i></div></div><span class="float-chip chip-one">✓ On track</span><span class="float-chip chip-two">↗ Team progress</span></div>
+      <div class="feature-row"><div><b>◈</b><span><strong>Project tracking</strong><small>See progress clearly</small></span></div><div><b>♧</b><span><strong>Team collaboration</strong><small>Stay aligned together</small></span></div><div><b>▤</b><span><strong>Role-based access</strong><small>Secure by design</small></span></div></div>
+    </section>
+    <section class="login-side"><form id="login-form" class="login-card"><div class="login-brand"><span class="brand-mark">▰</span><b>EPMS</b></div><span class="eyebrow">WELCOME BACK</span><h2>Sign in to your workspace</h2><p class="muted">Enter your account details to continue.</p><label>Company ID<input id="login-company-code" type="text" placeholder="ABC12345" autocomplete="organization" required></label><label>Email address<input id="login-email" type="email" placeholder="you@company.com" autocomplete="username" required></label><label>Password<div class="password-wrap"><input id="login-password" type="password" placeholder="Enter your password" autocomplete="current-password" required><button type="button" class="eye-btn" id="toggle-password" aria-label="Show password">◉</button></div></label><div class="login-meta"><span id="login-hint">Secure access with your EPMS account</span><a href="#" id="forgot-password-link">Forgot password?</a></div><button class="btn btn-primary btn-wide" type="submit">Sign in <span>→</span></button><div class="login-foot">Need access? Contact your system administrator.</div><div id="login-error" class="form-error"></div></form></section>
+  </main>
+
+  <div id="app-view" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar"><div class="side-brand"><span class="brand-mark">▰</span><b>EPMS</b><button id="sidebar-close" class="icon-btn mobile-only">×</button></div><div class="workspace-label">WORKSPACE</div><nav id="main-nav" class="main-nav">
+      <button class="nav-link active" data-page="dashboard"><span>▦</span>Overview</button>
+      <div class="nav-section">MANAGE</div>
+      <button class="nav-link" data-page="projects"><span>◫</span>Projects</button><button class="nav-link" data-page="tasks"><span>☷</span>Tasks</button><button class="nav-link" data-page="completed_work"><span>✓</span>Completed Work</button><button class="nav-link" data-page="milestones"><span>⚑</span>Milestones</button><button class="nav-link" data-page="members"><span>♧</span>Project members</button>
+      <div class="nav-section">COLLABORATE</div><button class="nav-link" data-page="chat"><span>▤</span>Team Group Chat</button><button class="nav-link" data-page="task_chat"><span>☷</span>Task Conversations</button><button class="nav-link" data-page="comments"><span>▤</span>Comments</button><button class="nav-link" data-page="notifications"><span>♢</span>Notifications</button>
+      <div class="nav-section admin-nav">ADMINISTRATION</div><button class="nav-link admin-nav" data-page="users"><span>♙</span>User management</button><button class="nav-link admin-nav" data-page="roles"><span>⛨</span>Roles & permissions</button><button class="nav-link admin-nav" data-page="audit_logs"><span>◷</span>Audit logs</button>
+    </nav><div class="sidebar-bottom"><div class="help-card"><span>✦</span><b>Need a hand?</b><small>Manage your work with confidence.</small></div><button class="nav-link" id="logout-btn"><span>↪</span>Sign out</button></div></aside>
+    <div class="main-area"><header class="topbar"><button id="menu-btn" class="icon-btn mobile-only">☰</button><div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="crumb-current">Overview</strong></div><div class="top-actions"><span class="api-status"><i></i> API connected</span><button id="theme-toggle" class="theme-toggle" title="Toggle theme">☾</button><button class="notification-btn" data-page="notifications" title="Notifications">♢<i></i></button><div class="user-menu"><div class="avatar" id="user-avatar">U</div><div><b id="header-name">User</b><small id="header-role">Member</small></div></div></div></header>
+      <main class="page-content"><div class="page-heading"><div><span class="eyebrow" id="page-eyebrow">YOUR WORKSPACE</span><h1 id="page-title">Overview</h1><p id="page-subtitle">Here’s what’s happening across your workspace.</p></div><div id="page-actions"></div></div><section id="page-root"></section><footer>© 2026 EPMS · Enterprise Project Management System <span>Built for better teamwork</span></footer></main>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <script src="js/app.js"></script>
+</body></html>
